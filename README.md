@@ -9,6 +9,8 @@ This project involves building a data warehouse to store and analyze data on Eth
 ```
 ├── notebooks
 │   ├── 1.0.data-prepocessing-and-exploration.ipynb 
+│   ├── 2.0-database-setup.ipynb
+│   ├── 3.0-object-detection.ipynb
 │   ├── README.md                 
 │   ├── __init__.py               
 │        
@@ -18,6 +20,8 @@ This project involves building a data warehouse to store and analyze data on Eth
 │   ├── preprocess.py               
 │   ├── scrape.py            
 │   ├── visualize.py           
+│   ├── create_db.py           
+│   ├── predict.py           
 │
 ├── scripts            
 │   ├── __init__.py
@@ -30,15 +34,25 @@ This project involves building a data warehouse to store and analyze data on Eth
 ├── data            
 │   ├── processed
 │   │   ├── cleaned_data.csv
+│   │   ├── detections_results.csv
+│   │   ├── telegram_messages.db
 │
 ├── logs            
 │   ├── data_cleaning.log
 │   ├── data_scraper.log
+│   ├── database_setup.log
 │
 ├── assets            
 │   ├── fonts
 │   │   ├── NotoSerifEthiopic_Condensed-Regular.ttf
 │
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── crud.py
 │
 ├── .env                   
 ├── .gitignore                 
@@ -65,6 +79,23 @@ This project involves building a data warehouse to store and analyze data on Eth
    ```sh
    pip install -r requirements.txt
    ```
+
+## Running the Application
+
+Start the FastAPI app with Uvicorn:
+```sh
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+- Replace `main` with the filename of your FastAPI app (e.g., `app.py`).
+- The `--reload` flag enables automatic restarts on code changes (useful for development).
+
+## Accessing the API
+
+Once the server is running, open the following URLs in your browser:
+- API Docs (Swagger UI): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- Alternative API Docs (ReDoc): [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
 
 ## Contributing
 
