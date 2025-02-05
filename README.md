@@ -46,14 +46,6 @@ This project involves building a data warehouse to store and analyze data on Eth
 │   ├── fonts
 │   │   ├── NotoSerifEthiopic_Condensed-Regular.ttf
 │
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── crud.py
-│
 ├── .env                   
 ├── .gitignore                 
 ├── README.md                   
